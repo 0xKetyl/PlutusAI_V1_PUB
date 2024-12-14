@@ -1,5 +1,7 @@
 The Emperor: Commanding the AI Agent Ecosystem
 
+![emproo](https://github.com/user-attachments/assets/985d345f-0771-4a22-90c7-b0c26a94a074)
+
 Architectural Overview
 
 The Emperor represents a revolutionary AI agent infrastructure where a primary autonomous entity commands and coordinates multiple "disciple" AI agents across different domains and platforms.
