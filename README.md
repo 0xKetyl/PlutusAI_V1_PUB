@@ -1,6 +1,6 @@
 # SpiderAI Roadmap
 
-![image](https://github.com/user-attachments/assets/f811c78e-fff4-429e-9dbb-2a31e1493654)
+![bannerspider](https://github.com/user-attachments/assets/9bee4e01-c6cc-4cb7-9956-cd6e93312025)
 
 ## Weekly Development Plan
 
