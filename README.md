@@ -1,6 +1,6 @@
 # Welcome to the Constellation Framework
 
-![conset](https://github.com/user-attachments/assets/7b3059df-5e89-4f51-80f5-4abf6cd56e5b)
+![jnh](https://github.com/user-attachments/assets/3bf6f941-5dd0-488e-b640-c07db2872ca0)
 
 **Revolutionizing Distributed Learning with Advanced AI Agents**
 
