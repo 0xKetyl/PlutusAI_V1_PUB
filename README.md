@@ -1,49 +1,85 @@
-# Welcome to the Constellation Framework
+![uiuiuiui](https://github.com/user-attachments/assets/ce5a8699-c43a-4083-b0f7-b657aa00c57b)
 
-![jnh](https://github.com/user-attachments/assets/3bf6f941-5dd0-488e-b640-c07db2872ca0)
+use async_openai::{Client, types::{CreateImageRequestArgs, ImageSize, ResponseFormat}};
+use image::{ImageBuffer, Rgb};
+use rand::Rng;
+use tokio;
 
-**Revolutionizing Distributed Learning with Advanced AI Agents**
+const WIDTH: u32 = 64;
+const HEIGHT: u32 = 64;
 
-The Constellation Framework is a pioneering infrastructure designed for distributed learning agents, enabling efficient collaboration and high-performance outcomes across diverse AI applications. By leveraging cutting-edge technologies, Constellation empowers autonomous agents to learn, adapt, and evolve within a decentralized architecture.
+struct PopcAIt {
+    client: Client,
+}
 
-## Core Technical Features
+impl PopcAIt {
+    fn new() -> Self {
+        PopcAIt {
+            client: Client::new(),
+        }
+    }
 
-### Distributed Learning Architecture
-- **Microservices-Based Design:** Each agent operates independently, optimized for specific tasks such as supervised learning, unsupervised learning, or reinforcement learning. This specialization allows for efficient data processing and knowledge acquisition.
-- **Dynamic Task Allocation:** Agents can dynamically adjust their roles based on the task requirements, ensuring optimal resource utilization and responsiveness to changing conditions.
+    async fn generate_avatar(&self, prompt: &str) -> ImageBuffer<Rgb<u8>, Vec<u8>> {
+        let mut img = ImageBuffer::new(WIDTH, HEIGHT);
+        let mut rng = rand::thread_rng();
 
-### Real-Time Inter-Agent Communication
-- **Event-Driven Architecture:** Utilizing protocols like Apache Kafka for low-latency communication, agents can share insights and data streams in real-time. This facilitates rapid decision-making and enhances situational awareness across the network.
-- **Decentralized Knowledge Sharing:** Agents leverage a peer-to-peer communication model to exchange information directly, reducing reliance on centralized nodes and improving resilience against failures.
+        // Generate colors
+        let bg_color = Rgb([rng.gen_range(200..256), rng.gen_range(200..256), rng.gen_range(200..256)]);
+        let face_color = Rgb([rng.gen_range(150..256), rng.gen_range(100..200), rng.gen_range(100..200)]);
+        let eye_color = Rgb([rng.gen_range(0..100), rng.gen_range(0..100), rng.gen_range(0..100)]);
 
-### Adaptive Learning Mechanisms
-- **Federated Learning (FL):** The framework supports federated learning, allowing agents to collaboratively train models on local data while preserving privacy. This approach minimizes data transfer and enables continuous model improvement based on localized insights.
-- **Continual Learning:** Agents utilize continual learning techniques to adapt their models over time, ensuring they remain effective in dynamic environments by integrating new data without forgetting previously acquired knowledge.
+        // Fill background
+        for pixel in img.pixels_mut() {
+            *pixel = bg_color;
+        }
 
-### Scalability and Elasticity
-- **Horizontal Scalability:** The Constellation Framework is designed for seamless scaling. Organizations can deploy additional agents as needed without compromising system performance, facilitated by container orchestration platforms like Kubernetes.
-- **Resource Optimization:** Elastic resource management ensures that computational resources are allocated efficiently based on real-time demands, optimizing operational costs.
+        // Draw face
+        for y in 10..54 {
+            for x in 10..54 {
+                if (x as i32 - 32).pow(2) + (y as i32 - 32).pow(2) < 400 {
+                    img.put_pixel(x, y, face_color);
+                }
+            }
+        }
 
-### Robust Data Management
-- **Data Lakes & ETL Pipelines:** Constellation incorporates a comprehensive data management system that utilizes data lakes for storing vast amounts of structured and unstructured data. ETL processes ensure efficient data retrieval and processing capabilities.
-- **Knowledge Graph Integration:** Agents employ knowledge graphs to enhance semantic reasoning and contextual understanding, enabling more effective decision-making through enriched data relationships.
+        // Draw eyes
+        self.draw_eye(&mut img, 25, 30, eye_color);
+        self.draw_eye(&mut img, 39, 30, eye_color);
 
-## Operational Mechanism
+        // Draw mouth
+        for x in 28..36 {
+            img.put_pixel(x, 40, Rgb([0, 0, 0]));
+        }
 
-1. **Agent Specialization:** Each agent is architected to focus on specific domains (e.g., natural language processing with transformer models, image classification using convolutional neural networks), enhancing expertise and output quality.
-   
-2. **Feedback Loops & Reinforcement Learning:** Continuous feedback mechanisms allow agents to learn from user interactions and inter-agent communications. Reinforcement learning techniques optimize decision-making processes based on performance metrics derived from real-time data.
+        // Generate ChatGPT image
+        let response = self.client.images().create(
+            CreateImageRequestArgs::default()
+                .prompt(prompt)
+                .size(ImageSize::S256x256)
+                .response_format(ResponseFormat::Url)
+                .build().unwrap()
+        ).await.unwrap();
 
-3. **Interoperability with Existing Systems:** The framework is designed for seamless integration with existing AI technologies (e.g., TensorFlow, PyTorch), enabling organizations to enhance their current systems while adopting advanced collaborative AI capabilities.
+        println!("ChatGPT generated image URL: {}", response.data[0].url.as_ref().unwrap());
 
-## Use Cases
+        img
+    }
 
-- **Collaborative Decision-Making:** Agents work together to synthesize insights from diverse data sources, leading to informed decisions across various applications.
-- **Resource Management Optimization:** The adaptive nature of the framework allows for efficient resource allocation by dynamically adjusting agent activities based on operational demands.
-- **Continuous Model Improvement:** Feedback loops ensure that agents refine their models over time based on shared experiences and interactions, enhancing overall system performance.
+    fn draw_eye(&self, img: &mut ImageBuffer<Rgb<u8>, Vec<u8>>, x: u32, y: u32, color: Rgb<u8>) {
+        for dy in 0..5 {
+            for dx in 0..5 {
+                if (dx as i32 - 2).pow(2) + (dy as i32 - 2).pow(2) <= 4 {
+                    img.put_pixel(x + dx, y + dy, color);
+                }
+            }
+        }
+    }
+}
 
-## Get Started with the Constellation Framework
-
-The Constellation Framework provides a powerful infrastructure for distributed learning agents that collaboratively tackle complex AI challenges. Whether you are developing intelligent systems or enhancing existing capabilities, Constellation offers the technical foundation necessary for success.
-
-**Explore our platform today to unlock the full potential of collaborative artificial intelligence!**
+#[tokio::main]
+async fn main() {
+    let popcait = PopcAIt::new();
+    let avatar = popcait.generate_avatar("A cute cat playing with a computer").await;
+    avatar.save("popcait_avatar.png").unwrap();
+    println!("PopcAIt avatar generated and saved as popcait_avatar.png");
+}
