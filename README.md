@@ -1,6 +1,6 @@
 # RevAI: Pioneering AI-Driven DeFi on Arc's RIG Framework
 
-![revaiii](https://github.com/user-attachments/assets/082e3c5d-24d9-44df-b6fd-0c40d5c98c10)
+![uiiii](https://github.com/user-attachments/assets/96a1c491-a576-4acf-ae93-56afae6ac75e)
 
 ## Revolutionizing Decentralized Finance
 
