@@ -1,6 +1,6 @@
 # RevAI: Pioneering AI-Driven DeFi on Arc's RIG Framework
 
-![revaiii](https://github.com/user-attachments/assets/e40d75b6-2f2b-4ae3-8fba-a68f4b4c5fd4)
+![revaii](https://github.com/user-attachments/assets/159eda14-4d63-4df8-af83-b05abefc808e)
 
 ##  Revolutionizing Decentralized Finance
 
@@ -8,7 +8,7 @@ RevAI stands at the forefront of AI-powered DeFi innovation, leveraging the cutt
 
 ## 🤖 Our AI Agents
 
-1. **ReflectionAI**: Our flagship agent harnesses the power of Natural Language Processing (NLP) and Machine Learning (ML) to analyze on-chain data and market sentiment. It autonomously distributes intelligent reflections directly to RevAI holders' wallets, eliminating the need for staking.
+1. **ReflectionAI**: Our flagship agent harnesses the power of Natural Language Processing (NLP) and Machine Learning (ML) to analyze on-chain and X data. It autonomously distributes intelligent reflections directly to RevAI holders' wallets, eliminating the need for staking.
 
 2. **TradingAI**: This high-performance agent excels in high-frequency trading across multiple DEXs. Powered by a custom neural network, it adapts to real-time market conditions, currently operating on five major decentralized exchanges with plans for further expansion.
 
@@ -28,8 +28,4 @@ Built on the Arc RIG framework, RevAI leverages:
 
 ## 👥 Expertise-Driven Development
 
-With a team boasting over 25 years of combined experience in Machine Learning and blockchain development, RevAI is not just another AI hype project. We're committed to building a robust, functional ecosystem that delivers tangible value to our users.
-
-## 🔗 Join the Revolution
-
-RevAI tokens are now available on [DEX name]. Acquire your tokens, hold them in your wallet, and watch as our AI agents work tirelessly to grow your assets. Welcome to the future of AI-driven DeFi – where innovation meets returns.
+With a team boasting over 10 years of combined experience in Machine Learning and blockchain development, RevAI is not just another AI hype project. We're committed to building a robust, functional ecosystem that delivers tangible value to our users.
