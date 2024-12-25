@@ -1,31 +1,40 @@
-# RevAI: Pioneering AI-Driven DeFi on Arc's RIG Framework
+# PlutusAI: Autonomous AI-Driven Token Reward System
 
-![revaii](https://github.com/user-attachments/assets/159eda14-4d63-4df8-af83-b05abefc808e)
+![polm](https://github.com/user-attachments/assets/a2130a45-992c-473a-a3eb-2a2d7013fa11)
 
-##  Revolutionizing Decentralized Finance
+## Overview
 
-RevAI stands at the forefront of AI-powered DeFi innovation, leveraging the cutting-edge Arc RIG framework to deliver unprecedented value to token holders. Our ecosystem comprises three specialized AI agents, each designed to maximize returns and optimize user experience in the volatile world of decentralized finance.
+PlutusAI is an advanced AI agent built on the Solana blockchain, leveraging the Eliza framework from Ai16zdao. It autonomously rewards community engagement with $PlutusAI tokens.
 
-## 🤖 Our AI Agents
+## Key Features
 
-1. **ReflectionAI**: Our flagship agent harnesses the power of Natural Language Processing (NLP) and Machine Learning (ML) to analyze on-chain and X data. It autonomously distributes intelligent reflections directly to RevAI holders' wallets, eliminating the need for staking.
+- NLP Engine for processing user interactions
+- Federated Learning for data privacy and model improvement
+- Custom Token Distribution Algorithm
+- Sentiment Analysis for evaluating interaction quality
+- Dynamic Reward Allocation using reinforcement learning
+- Scalable Architecture based on microservices
 
-2. **TradingAI**: This high-performance agent excels in high-frequency trading across multiple DEXs. Powered by a custom neural network, it adapts to real-time market conditions, currently operating on five major decentralized exchanges with plans for further expansion.
+## Technical Stack
 
-3. **YieldAI**: Our yield optimization powerhouse employs proprietary algorithms to identify and exploit the most lucrative farming opportunities. It's designed to maximize Annual Percentage Yield (APY) while minimizing Impermanent Loss (IL), making it a DeFi farmer's ultimate tool.
+- Transformers library for NLP
+- PyTorch for deep learning models
+- Solana blockchain for token transactions
+- Rust for smart contract development
 
-## 💰 Innovative Tokenomics
+## Participation
 
-All three AI agents work synergistically to generate revenue, which is automatically distributed to RevAI token holders. Our groundbreaking tokenomic model ensures fair distribution and aligns incentives across the entire ecosystem, allowing holders to benefit directly from the platform's growth.
+To participate in the reward distribution:
 
-## 🛠️ Cutting-Edge Technology
+1. Find our pinned tweet on Twitter (https://x.com/AI_Plutus)
+2. Comment your Solana address under the tweet
 
-Built on the Arc RIG framework, RevAI leverages:
-- Modular architecture for rapid development and scaling
-- Advanced federated learning protocols for enhanced privacy
-- Real-time inter-agent communication for optimal decision-making
-- Adaptive consensus mechanisms ensuring network security and stability
+This creates a 1:1 mapping between your Twitter handle and on-chain identity, enabling our AI to accurately track and reward your engagement.
 
-## 👥 Expertise-Driven Development
+## Token Details
 
-With a team boasting over 10 years of combined experience in Machine Learning and blockchain development, RevAI is not just another AI hype project. We're committed to building a robust, functional ecosystem that delivers tangible value to our users.
+- Total supply: 1.000.000.000 $PlutusAI (Pumpfun)
+- 5% allocated for initial rewards
+- Self-sustaining model with built-in recycling mechanism
+
+Join us in advancing AI-driven engagement and tokenized rewards on Solana!
