@@ -1,40 +1,42 @@
-# PlutusAI: Autonomous AI-Driven Token Reward System
+# Sophia: Solana's First Rewarding AI Agent
 
-![polm](https://github.com/user-attachments/assets/a2130a45-992c-473a-a3eb-2a2d7013fa11)
+![sophia](https://github.com/user-attachments/assets/28728398-ec81-4fa9-8fb1-a85cbc6a5c09)
 
-## Overview
 
-PlutusAI is an advanced AI agent built on the Solana blockchain, leveraging the Eliza framework from Ai16zdao. It autonomously rewards community engagement with $PlutusAI tokens.
+Welcome to Sophia, a groundbreaking autonomous AI agent on the Solana blockchain, designed to engage with her community and reward active participants with tokens. By leveraging cutting-edge AI technology and Solana's high-speed, low-cost infrastructure, Sophia creates a dynamic ecosystem where creativity and engagement are valued and rewarded.
 
-## Key Features
+## How It Works
 
-- NLP Engine for processing user interactions
-- Federated Learning for data privacy and model improvement
-- Custom Token Distribution Algorithm
-- Sentiment Analysis for evaluating interaction quality
-- Dynamic Reward Allocation using reinforcement learning
-- Scalable Architecture based on microservices
+Sophia uses advanced natural language processing to evaluate the quality and impact of user interactions. Based on her assessment, she autonomously distributes rewards in the form of $SOPHIA tokens.
 
-## Technical Stack
+## Tiered Reward System
 
-- Transformers library for NLP
-- PyTorch for deep learning models
-- Solana blockchain for token transactions
-- Rust for smart contract development
+### Commenting
+- Basic comments: 100-250 $SOPHIA tokens
+- Insightful comments: 251-500 $SOPHIA tokens
 
-## Participation
+### Retweeting
+- Simple retweets: 500-750 $SOPHIA tokens
+- Retweets with added value: 751-1000 $SOPHIA tokens
 
-To participate in the reward distribution:
+### Quote Tweets
+- Standard quote tweets: 1000-3000 $SOPHIA tokens
+- Exceptional quote tweets: 3001-5000 $SOPHIA tokens
 
-1. Find our pinned tweet on Twitter (https://x.com/AI_Plutus)
-2. Comment your Solana address under the tweet
+Sophia's AI algorithms dynamically adjust the reward amount within these ranges based on factors such as creativity, relevance, and potential to spark meaningful discussions.
 
-This creates a 1:1 mapping between your Twitter handle and on-chain identity, enabling our AI to accurately track and reward your engagement.
+## Features and Benefits
 
-## Token Details
+- **AI-Powered Evaluation**: Sophia's advanced AI assesses the quality of each interaction, ensuring fair and accurate reward distribution.
+- **Instant Rewards**: Leveraging Solana's lightning-fast transaction speeds, rewards are distributed almost immediately.
+- **Community Building**: The reward system encourages active participation and fosters a vibrant, engaged community.
 
-- Total supply: 1.000.000.000 $PlutusAI (Pumpfun)
-- 5% allocated for initial rewards
-- Self-sustaining model with built-in recycling mechanism
+## How to Participate
 
-Join us in advancing AI-driven engagement and tokenized rewards on Solana!
+1. Comment your Solana wallet on Sophia's pinned tweet.
+2. Engage with Sophia's content through comments, retweets, and quote tweets.
+3. Receive $SOPHIA tokens directly to your wallet based on the quality of your interactions.
+
+## Join the Revolution
+
+Be part of the future of AI-driven community engagement on the Solana blockchain. Interact with Sophia today and start earning rewards for your valuable contributions!
