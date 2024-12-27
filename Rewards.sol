@@ -11,20 +11,20 @@ use solana_program::{
 use borsh::{BorshDeserialize, BorshSerialize};
 
 // Define the program ID
-solana_program::declare_id!("ReflectionAIProgramIDXXXXXXXXXXXXXXXXXXXXXXX");
+solana_program::declare_id!("SophiaAIProgramIDXXXXXXXXXXXXXXXXXXXXXXX");
 
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
-pub struct ReflectionAIState {
-    pub total_reflections: u64,
-    pub last_reflection_timestamp: i64,
+pub struct SophiaAIState {
+    pub total_Sophias: u64,
+    pub last_Sophia_timestamp: i64,
 }
 
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
-pub enum ReflectionAIInstruction {
+pub enum SophiaAIInstruction {
     Initialize,
     AnalyzeMarket,
     GenerateInsights,
-    DistributeReflections { amount: u64 },
+    DistributeSophias { amount: u64 },
 }
 
 entrypoint!(process_instruction);
@@ -34,14 +34,14 @@ pub fn process_instruction(
     accounts: &[AccountInfo],
     instruction_data: &[u8],
 ) -> ProgramResult {
-    let instruction = ReflectionAIInstruction::try_from_slice(instruction_data)
+    let instruction = SophiaAIInstruction::try_from_slice(instruction_data)
         .map_err(|_| ProgramError::InvalidInstructionData)?;
 
     match instruction {
-        ReflectionAIInstruction::Initialize => initialize(program_id, accounts),
-        ReflectionAIInstruction::AnalyzeMarket => analyze_market(accounts),
-        ReflectionAIInstruction::GenerateInsights => generate_insights(accounts),
-        ReflectionAIInstruction::DistributeReflections { amount } => distribute_reflections(accounts, amount),
+        SophiaAIInstruction::Initialize => initialize(program_id, accounts),
+        SophiaAIInstruction::AnalyzeMarket => analyze_market(accounts),
+        SophiaAIInstruction::GenerateInsights => generate_insights(accounts),
+        SophiaAIInstruction::DistributeSophias { amount } => distribute_Sophias(accounts, amount),
     }
 }
 
@@ -53,52 +53,52 @@ fn initialize(program_id: &Pubkey, accounts: &[AccountInfo]) -> ProgramResult {
         return Err(ProgramError::IncorrectProgramId);
     }
 
-    let mut state = ReflectionAIState {
-        total_reflections: 0,
-        last_reflection_timestamp: 0,
+    let mut state = SophiaAIState {
+        total_Sophias: 0,
+        last_Sophia_timestamp: 0,
     };
 
     state.serialize(&mut &mut state_account.data.borrow_mut()[..])?;
 
-    msg!("ReflectionAI: Initialized state account");
+    msg!("SophiaAI: Initialized state account");
     Ok(())
 }
 
 fn analyze_market(accounts: &[AccountInfo]) -> ProgramResult {
     // Implement market analysis logic here
     // This could involve fetching price data from oracles, analyzing on-chain metrics, etc.
-    msg!("ReflectionAI: Analyzing market trends...");
+    msg!("SophiaAI: Analyzing market trends...");
     Ok(())
 }
 
 fn generate_insights(accounts: &[AccountInfo]) -> ProgramResult {
     // Implement insight generation logic here
     // This could involve processing the analyzed data and creating actionable insights
-    msg!("ReflectionAI: Generating personalized insights...");
+    msg!("SophiaAI: Generating personalized insights...");
     Ok(())
 }
 
-fn distribute_reflections(accounts: &[AccountInfo], amount: u64) -> ProgramResult {
+fn distribute_Sophias(accounts: &[AccountInfo], amount: u64) -> ProgramResult {
     let account_info_iter = &mut accounts.iter();
     let state_account = next_account_info(account_info_iter)?;
     let token_program = next_account_info(account_info_iter)?;
     let clock = Clock::get()?;
 
-    let mut state = ReflectionAIState::try_from_slice(&state_account.data.borrow())?;
+    let mut state = SophiaAIState::try_from_slice(&state_account.data.borrow())?;
 
-    // Check if enough time has passed since the last reflection
-    if clock.unix_timestamp - state.last_reflection_timestamp < 86400 {
+    // Check if enough time has passed since the last Sophia
+    if clock.unix_timestamp - state.last_Sophia_timestamp < 86400 {
         return Err(ProgramError::Custom(1)); // Custom error for time restriction
     }
 
     // Update state
-    state.total_reflections += amount;
-    state.last_reflection_timestamp = clock.unix_timestamp;
+    state.total_Sophias += amount;
+    state.last_Sophia_timestamp = clock.unix_timestamp;
     state.serialize(&mut &mut state_account.data.borrow_mut()[..])?;
 
     // Implement token transfer logic here
     // This would involve calling the Token program to transfer tokens to holders
-    msg!("ReflectionAI: Distributing {} reflections to token holders", amount);
+    msg!("SophiaAI: Distributing {} Sophias to token holders", amount);
 
     Ok(())
 }
