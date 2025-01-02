@@ -1,64 +1,61 @@
-# TargetAI Token Distribution and AI Technology Overview
+# SkillAI: Autonomous AI Agent Framework for Solana
 
-## Autonomous AI Agent: Target
-
-Target is an autonomous AI agent responsible for managing its own wallet and making independent decisions regarding token distribution. It utilizes advanced algorithms to optimize reward allocation based on market conditions and community engagement.
-
-## Market Capitalization-Based Distribution Formula
-
-The distribution of tokens based on market capitalization milestones is defined as follows:
-
-$$
-D_{MC} = 
-\begin{cases} 
-0 & \text{if } MC < 50,000 \\
-\frac{T_{managed}}{7} & \text{if } 50,000 \leq MC < 100,000 \\
-\left(\frac{T_{managed}}{7}\right) \times 2 & \text{if } 100,000 \leq MC < 250,000 \\
-\left(\frac{T_{managed}}{7}\right) \times 3 & \text{if } 250,000 \leq MC < 500,000 \\
-\left(\frac{T_{managed}}{7}\right) \times 4 & \text{if } 500,000 \leq MC < 1,000,000 \\
-\left(\frac{T_{managed}}{7}\right) \times 5 & \text{if } 1,000,000 \leq MC < 3,000,000 \\
-\left(\frac{T_{managed}}{7}\right) \times 6 & \text{if } 3,000,000 \leq MC < 5,000,000 \\
-\frac{T_{managed}}{7} & \text{if } MC \geq 5,000,000
-\end{cases}
-$$
+![skillbanner](https://github.com/user-attachments/assets/0116d462-d0f0-454e-ae77-e10f5e4d7e10)
 
 
-Where:
-- \( D_{MC} \) = Amount of tokens distributed based on market cap
-- \( T_{managed} = 2,500,000 \) (Total tokens managed by Target)
-- \( MC = \) Market Capitalization (in USD)
+SkillAI is an open-source framework for creating autonomous AI agents that reward knowledge sharing and content creation on Solana.
 
-## Social Media Engagement Rewards Formula
+## Roadmap (Q1 2025)
 
-Tokens are also distributed based on engagement metrics from Target's tweets:
+1. Core Framework Development
+   - Implement basic AI agent architecture using Rust
+   - Develop initial token distribution algorithms
+   - Create NLP models for content evaluation
 
-$$
-D_{Engagement} = 
-\begin{cases}
-0 & \text{if } L < 10\\
-1,000 & \text{if } L = 10\\
-2,000 & \text{if } L = 100\\
-5,000 & \text{if } L = 500\\
-10,000 & \text{if } C + R > 50\\
-15,000 & \text{if } C + R > 100
-\end{cases}
-$$
+2. Solana Integration
+   - Implement Solana program interface using Anchor
+   - Develop on-chain state management for agent data
+   - Create token minting and distribution mechanisms
+
+3. Testing and Optimization
+   - Conduct extensive testing on Solana devnet
+   - Optimize gas usage and transaction throughput
+   - Implement security audits and bug bounty program
+
+## Technical Architecture
+
+SkillAI is built on Solana using Rust and the Anchor framework:
+
+### Core Components
+
+- **Solana Program**: Main entry point for on-chain logic, implemented using Anchor
+- **Agent Logic**: Rust modules for content analysis and reward calculation
+- **State Management**: On-chain account structures for storing agent and user data
+- **Token Distribution**: SPL Token integration for minting and distributing rewards
+
+### Key Algorithms
+
+let base_reward = (quality_score * engagement_rate) + (user_influence * viral_potential);
+let network_adjustment = apply_network_dynamics(base_reward, network_state)?;
+
+Ok(finalize_reward(network_adjustment))
 
 
-Where:
-- \( D_{Engagement} = \) Amount of tokens distributed based on engagement
-- \( L = \) Number of Likes on a Tweet
-- \( C = \) Number of Comments on a Tweet
-- \( R = \) Number of Retweets on a Tweet
+### Scalability Features
 
-## AI Technologies Utilized by Target
+- Efficient use of Solana's parallel transaction processing
+- Optimized account structure to minimize storage costs
+- Batched reward distributions to reduce transaction overhead
 
-1. **Machine Learning Algorithms**: Target employs machine learning to analyze real-time market data and user interactions for optimal reward distribution.
-   
-2. **Predictive Analytics**: By utilizing predictive analytics techniques such as regression analysis and time-series forecasting, Target can anticipate market trends and adjust distribution strategies accordingly.
+## Getting Started
 
-3. **Natural Language Processing (NLP)**: NLP is used to process community feedback and enhance user interactions with the platform.
+(Instructions for setting up and deploying SkillAI agents will be added here upon completion of initial development)
 
-4. **Smart Contracts**: The operational framework is built on smart contracts that automate the reward distribution process while ensuring transparency and security.
+## Contributing
 
-By integrating these technologies, Target exemplifies a sophisticated approach to decentralized finance that empowers users and fosters community engagement.
+We welcome contributions from the community! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to get involved.
+
+## License
+
+SkillAI is released under the MIT License. See the [LICENSE](LICENSE) file for details.
+
